@@ -1,0 +1,58 @@
+
+  
+  .example-sidenav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 200px;
+    background: #3c3c7a;
+  }
+  
+  .example-spacer {
+    flex: 1 1 auto;
+  }
+  .profile{
+    border-radius: 50% ;
+  }
+
+  .profile-text{
+    margin-top: 30px;
+  }
+
+  .icon-size mat-icon {
+    font-size: 18px; /* Adjust the size as needed */
+  }
+
+  .frequently-text-size{
+    font-size: 12px !important;
+  }
+
+  .watson-text-size{
+    font-size: 13px !important;
+  }
+  // .lock{
+  //   height: 10px;
+  //   width: 10px;
+  // }
+  
+//   .mat-icon {
+//     -webkit-user-select: none;
+//     user-select: none;
+//     background-repeat: no-repeat;
+//     display: inline-block;
+//     fill: currentColor;
+//     height: 27px !important;
+//     width: 27px !important;
+//     overflow: hidden;
+// }
+.home-icon {
+  background-color: #150444;
+  color: white; /* Set icon color to white */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px; /* Set a width and height for the icon container */
+  height: 30px;
+  border-radius: 20%; /* Make the background color circular */
+  font-size: 24px; /* Adjust icon size */
+}

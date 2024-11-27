@@ -1,0 +1,131 @@
+<!-- <div class="container bg-calc">
+
+  <div class="card w-25 h-75 calc-btn-outline">
+    <div class="m-3">
+      <div
+        class="calc-output d-flex align-items-end w-90 h-25 justify-content-end p-3 fs-1 mb-1"
+      >
+        0
+      </div>
+
+   
+      <div class="d-flex gap-2 mt-2">
+        <button class="btn btn-success flex-fill text-center p-3">C</button>
+        <button class="btn btn-success flex-fill text-center p-3">%</button>
+        <button class="btn btn-success flex-fill text-center p-3">=</button>
+        <button class="btn btn-success flex-fill text-center p-3">+</button>
+      </div>
+      <div class="d-flex gap-2 mt-2">
+        <button class="calc-output flex-fill text-center p-3">7</button>
+        <button class="calc-output flex-fill text-center p-3">8</button>
+        <button class="calc-output flex-fill text-center p-3">9</button>
+        <button class="btn btn-success flex-fill text-center p-3">-</button>
+      </div>
+
+      <div class="d-flex gap-2 mt-2">
+        <button class="calc-output flex-fill text-center p-3">4</button>
+        <button class="calc-output flex-fill text-center p-3">5</button>
+        <button class="calc-output flex-fill text-center p-3">6</button>
+        <button class="btn btn-success flex-fill text-center p-3">*</button>
+      </div>
+      <div class="d-flex gap-2 mt-2">
+        <button class="calc-output flex-fill text-center p-3">1</button>
+        <button class="calc-output flex-fill text-center p-3">2</button>
+        <button class="calc-output flex-fill text-center p-3">3</button>
+        <button class="btn btn-success flex-fill text-center p-3">/</button>
+      </div>
+
+      <div class="d-flex gap-2 mt-2">
+        <button class="calc-output flex-fill text-center p-3">0</button>
+        <button class="calc-output flex-fill text-center p-3">.</button>
+    
+      </div>
+    </div>
+  </div>
+</div> -->
+
+
+
+<div class="bg-calc row">
+  <div class="card col-12 col-lg-5 col-xl-3 col-md-5 calc-btn-outline">
+    <div class="m-3">
+      <!-- Display -->
+      <div class="calc-output d-flex align-items-end w-90 h-25 justify-content-end p-3 fs-1 mb-1">
+        {{ currentInput }}
+      </div>
+
+      <!-- Buttons -->
+      <div class="row g-2 mt-2">
+        <div class="col-3">
+          <button class="btn btn-success w-100 text-center p-3" (click)="clear()">C</button>
+        </div>
+        <div class="col-3">
+          <button class="btn btn-success w-100 text-center p-3" (click)="handleOperator('%')">%</button>
+        </div>
+        <div class="col-3">
+          <button class="btn btn-success w-100 text-center p-3" (click)="handleEquals()">=</button>
+        </div>
+        <div class="col-3">
+          <button class="btn btn-success w-100 text-center p-3" (click)="handleOperator('+')">+</button>
+        </div>
+      </div>
+
+      <div class="row g-2 mt-2">
+        <div class="col-3">
+          <button class="btn btn-secondary w-100 text-center p-3" (click)="handleNumber('7')">7</button>
+        </div>
+        <div class="col-3">
+          <button class="btn btn-secondary w-100 text-center p-3" (click)="handleNumber('8')">8</button>
+        </div>
+        <div class="col-3">
+          <button class="btn btn-secondary w-100 text-center p-3" (click)="handleNumber('9')">9</button>
+        </div>
+        <div class="col-3">
+          <button class="btn btn-success w-100 text-center p-3" (click)="handleOperator('-')">-</button>
+        </div>
+      </div>
+
+      <div class="row g-2 mt-2">
+        <div class="col-3">
+          <button class="btn btn-secondary w-100 text-center p-3" (click)="handleNumber('4')">4</button>
+        </div>
+        <div class="col-3">
+          <button class="btn btn-secondary w-100 text-center p-3" (click)="handleNumber('5')">5</button>
+        </div>
+        <div class="col-3">
+          <button class="btn btn-secondary w-100 text-center p-3" (click)="handleNumber('6')">6</button>
+        </div>
+        <div class="col-3">
+          <button class="btn btn-success w-100 text-center p-3" (click)="handleOperator('*')">*</button>
+        </div>
+      </div>
+
+      <div class="row g-2 mt-2">
+        <div class="col-3">
+          <button class="btn btn-secondary w-100 text-center p-3" (click)="handleNumber('1')">1</button>
+        </div>
+        <div class="col-3">
+          <button class="btn btn-secondary w-100 text-center p-3" (click)="handleNumber('2')">2</button>
+        </div>
+        <div class="col-3">
+          <button class="btn btn-secondary w-100 text-center p-3" (click)="handleNumber('3')">3</button>
+        </div>
+        <div class="col-3">
+          <button class="btn btn-success w-100 text-center p-3" (click)="handleOperator('/')">/</button>
+        </div>
+      </div>
+
+      <div class="row g-2 mt-2">
+        <div class="col-6">
+          <button class="btn btn-secondary w-100 text-center p-3" (click)="handleNumber('0')">0</button>
+        </div>
+        <div class="col-6">
+          <button class="btn btn-secondary w-100 text-center p-3" (click)="handleNumber('.')">.</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  
+  

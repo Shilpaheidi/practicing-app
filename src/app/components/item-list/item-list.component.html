@@ -1,0 +1,143 @@
+<mat-sidenav-container>
+  <mat-sidenav
+    #sidenav
+    mode="side"
+    opened
+    class="example-sidenav"
+    [fixedInViewport]="fixed"
+  >
+    <div class="d-flex align-items-center mx-1 mt-2">
+      <span class="mx-1">
+        <mat-icon class="text-white mx-1">note</mat-icon>
+      </span>
+      <span class="text-white me-1">EGRET</span>
+      <span class="d-flex ms-auto">
+        <!-- Use ms-auto to align to the right -->
+        <mat-slide-toggle class="text-white"></mat-slide-toggle>
+      </span>
+    </div>
+    <div class="profile-text col-12">
+      <div class="d-flex align-items-center justify-content-center">
+        <img
+          class="profile"
+          height="40px"
+          width="40px"
+          src="../../../assets/myprofile.jpg"
+          alt="profile"
+        />
+      </div>
+
+      <div class="d-flex justify-content-center align-items-center mt-2">
+        <span class="lock me-1">
+          <mat-icon class="text-white">lock</mat-icon>
+        </span>
+        <span class="text-white watson-text-size">Watson Joyce</span>
+      </div>
+      <div class="d-flex align-items-center justify-content-center mt-3">
+        <span class="mx-2 icon-size"
+          ><mat-icon class="text-white">settings</mat-icon></span
+        >
+        <span class="mx-2 icon-size"
+          ><mat-icon class="text-white">mail</mat-icon></span
+        >
+        <span class="mx-2 icon-size"
+          ><mat-icon class="text-white">logout</mat-icon></span
+        >
+      </div>
+
+      <div class="mt-4">
+        <span class="m-2 text-white fs-6 frequently-text-size"
+          >Frequently Accessed</span
+        >
+      </div>
+
+      <div class="d-flex align-items-center justify-content-center mt-3">
+        <span class="icon-size"
+          ><mat-icon class="mx-2 text-white home-icon">home</mat-icon></span
+        >
+        <span class="icon-size"
+          ><mat-icon class="mx-2 text-white home-icon">person</mat-icon></span
+        >
+        <span class="icon-size"
+          ><mat-icon class="mx-2 text-white home-icon"
+            >flight_takeoff</mat-icon
+          ></span
+        >
+      </div>
+      <div class="my-3 text-white">Main Items</div>
+    </div>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <mat-toolbar>
+      <button
+        (click)="sidenav.toggle()"
+        mat-icon-button
+        class="example-icon"
+        aria-label="Example icon-button with menu icon"
+      >
+        <mat-icon>menu</mat-icon>
+      </button>
+
+      <span class="example-spacer"></span>
+      <button
+        mat-icon-button
+        class="example-icon favorite-icon"
+        aria-label="Example icon-button with heart icon"
+      >
+        <mat-icon>favorite</mat-icon>
+      </button>
+      <button
+        mat-icon-button
+        class="example-icon"
+        aria-label="Example icon-button with share icon"
+      >
+        <mat-icon>share</mat-icon>
+      </button>
+      <button
+        mat-icon-button
+        class="example-icon"
+        aria-label="Example icon-button with share icon"
+      >
+        <mat-icon>share</mat-icon>
+      </button>
+      <button
+        mat-icon-button
+        class="example-icon"
+        aria-label="Example icon-button with share icon"
+      >
+        <mat-icon>share</mat-icon>
+      </button>
+    </mat-toolbar>
+
+    <div class="d-flex justify-content-around">
+      <div class="d-flex flex-column">
+        <mat-icon class="ms-2">trending_up</mat-icon>
+        <span class="ms-2">5040</span>
+        <span class="ms-2">Page View</span>
+      </div>
+      <div class="d-flex flex-column">
+        <mat-icon class="ms-2">trending_up</mat-icon>
+        <span class="ms-2">5040</span>
+        <span class="ms-2">Page View</span>
+      </div>
+      <div class="d-flex flex-column">
+        <mat-icon class="ms-2">trending_up</mat-icon>
+        <span class="ms-2">5040</span>
+        <span class="ms-2">Page View</span>
+      </div>
+      <div class="d-flex flex-column">
+        <mat-icon class="ms-2">trending_up</mat-icon>
+        <span class="ms-2">5040</span>
+        <span class="ms-2">Page View</span>
+      </div>
+      <div class="d-flex flex-column">
+        <mat-icon class="ms-2">trending_up</mat-icon>
+        <span class="ms-2">5040</span>
+        <span class="ms-2">Page View</span>
+      </div>
+    </div>
+
+    <!-- <button mat-button (click)="sidenav.toggle()">Toggle</button> -->
+  </mat-sidenav-content>
+</mat-sidenav-container>

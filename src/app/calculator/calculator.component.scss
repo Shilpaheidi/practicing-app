@@ -1,0 +1,72 @@
+.bg-calc {
+    background: #363952; /* Bluish gray-black */
+    width: 100vw; /* Full viewport width */
+    height: 100vh; /* Full viewport height */
+    display: flex; /* To center content */
+    justify-content: center; /* Horizontally center */
+    align-items: center; /* Vertically center */
+    color: white; /* Text color */
+    padding: 0; /* Remove any default padding */
+    overflow: hidden; /* Prevent scrolling */
+  }
+  
+  /* Media query for smaller devices (e.g., mobile phones) */
+  @media (max-width: 576px) {
+    .bg-calc {
+      width: 100vw;
+      height: 100vh;
+    }
+  }
+  
+  /* Media query for tablets (medium screens) */
+  @media (max-width: 768px) {
+    .bg-calc {
+      width: 100vw;
+      height: 100vh;
+    }
+  }
+  
+  /* Media query for larger screens (desktop) */
+  @media (min-width: 1024px) {
+    .bg-calc {
+      width: 100vw;
+      height: 100vh;
+    }
+  }
+  
+
+.calc-btn-outline {
+  background: #1c1d2c;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+  color: white;
+}
+
+.calc-output{
+    background: #363952;
+  
+}
+
+.w-40{
+    width: 30%;
+}
+
+.w-lg-40{
+    width: 30%; 
+}
+
+.bg-calc {
+    overflow: hidden;
+  }
+
+  .card {
+    height: auto;
+    max-height: 100vh; /* Prevent card from growing too tall */
+    overflow: hidden;
+  }
+
+  /* Optional: Make sure the calculator container adapts to the screen size */
+  .calc-output {
+    min-height: 70px; /* Ensure the output has a minimum height */
+  }

@@ -1,0 +1,10 @@
+<div class="game-container">
+    <div *ngFor="let row of grid; let y = index" class="row">
+      <div
+        *ngFor="let cell of row; let x = index"
+        class="cell"
+        [ngClass]="{'snake-body': isSnake(x, y), 'food': isFood(x, y)}"
+      ></div>
+    </div>
+  </div>
+  

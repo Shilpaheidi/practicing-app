@@ -1,0 +1,154 @@
+<!-- <div class="container m-3">
+  <div class="row d-flex justify-content-center">
+    <div class="col-lg-6 col-md-8 col-12">
+      <div class="bg-white card shadow-lg p-4">
+        <div class="row">
+          <div
+            class="d-flex flex-column flex-lg-row justify-content-around text-center"
+          >
+            <div
+              class="d-flex flex-column flex-lg-row justify-content-around text-center"
+            >
+              <span>Total&nbsp;Leave</span>
+              <span class="leave-count">45</span>
+            </div>
+            <span
+              class="line"
+              style="width: 2px; height: 40px; background-color: #ccc"
+            ></span>
+            <span>Total&nbsp;Leave</span>
+            <span class="leave-count">45</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-6 col-md-8 col-12">
+      <div class="bg-white card shadow-lg p-4">sajajs</div>
+    </div>
+  </div>
+</div> -->
+
+<!-- -------------------Todo List--------------------------------- -->
+
+<!-- <div class="todo-container">
+      <h2>My To-Do List</h2>
+
+      <form (submit)="addTask()">
+        <input type="text" [(ngModel)]="newTask.name" placeholder="Task Name" required name="taskName"/>
+
+        <select name="category" [(ngModel)]="newTask.category" placeholder="Category" required >
+          <option value="">Select Category</option>
+          <option value="Work">Work</option>
+          <option value="Personal">Personal</option>
+          <option value="Shopping">Shopping</option>
+        </select>
+
+        <input type="date"  [(ngModel)]="newTask.dueDate"  placeholder="Due Date" required name="dueDate"/>
+
+        <select [(ngModel)]="newTask.priority" placeholder="priority" name="priority" required id="">
+          <option value="High">High</option>
+          <option value="Medium">Medium</option>
+          <option value="Low">Low</option>
+        </select>
+
+        <button type="submit">Add Task </button>
+      </form>
+   </div>
+
+   <table>
+    <thead>
+      <tr>
+        <th (click)="sortTasksBy('name')">Task Name</th>
+        <th>Category</th>
+        <th>Due Date</th>
+        <th (click)="sortTasksBy('priority')">Priority</th>
+        <th>Status</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let task of filteredTasks()">
+        <td [class.completed]="task.completed">{{task.name}}</td>
+        <td>{{task.category}}</td>
+        <td>{{task.dueDate | date}}</td>
+        <td>{{task.priority}}</td>
+        <td>{{task.completed ? 'Completed' : 'Pending'}}</td>
+        <td>
+          <button (click)="markAsCompleted(task)">Complete</button>
+          <button (click)="deleteTask(task)">Complete</button>
+        </td>
+      </tr>
+    </tbody>
+   </table> -->
+
+<!-- https://chatgpt.com/c/67318d13-8078-8005-a4ff-3b8b9bca1db6 -->
+
+<!-- <div class="container">
+  <div class="row">
+    <div class="col-md-6 col-lg-6">
+      <div class="bg-white card shadow-lg p-4">
+        <div class="d-flex align-items-center justify-content-around g-4 m-3">
+          <span class="mx-3">Total&nbsp;Leave</span>
+          <span class="leave-count mx-3">45</span>
+
+          <span
+            class="line text-center"
+            style="width: 2px; height: 40px; background-color: #ccc"
+          ></span>
+
+          <span class="mx-3">Total&nbsp;Leave</span>
+          <span class="leave-count mx-3">45</span>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6 col-lg-6">
+      <div class="bg-white card shadow-lg p-4"></div>
+    </div>
+  </div>
+</div> -->
+
+<div class="container">
+  <div class="row g-4">
+    <!-- Adds spacing between rows -->
+    <!-- First Column -->
+    <div class="col-12 col-md-6">
+      <!-- Full width on small screens, half on medium and larger -->
+      <div class="bg-white card shadow-lg p-1">
+        <div class="d-flex flex-wrap justify-content-around m-3">
+          <!-- Total Leave Section -->
+          <div class="d-flex align-items-center flex-column flex-md-row">
+            <span class="mx-2">Total&nbsp;Leave</span>
+            <span class="leave-count mx-2">45</span>
+          </div>
+
+          <!-- Divider -->
+          <span
+            class="line d-md-block text-center"
+            style="width: 3px; height: 40px; background-color: #ccc"
+          ></span>
+
+          <!-- Second Total Leave Section -->
+          <div class="d-flex align-items-center flex-column flex-md-row mx-2">
+            <span class="ml-5">Balance&nbsp;Leave</span>
+            <span class="leave-count mx-2">45</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Second Column -->
+    <div class="col-12 col-md-6">
+      <!-- Full width on small screens, half on medium and larger -->
+      <div class="bg-white card shadow-lg p-1">
+        <div class="d-flex flex-wrap justify-content-around m-3">
+          <div class="d-flex align-items-center flex-column flex-md-row">
+            <span class="mx-2">Total&nbsp;Permission</span>
+            <span class="leave-count mx-2">45</span>
+          </div>
+
+          <span class="line d-md-block text-center"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
