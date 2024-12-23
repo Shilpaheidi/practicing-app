@@ -1,0 +1,33 @@
+.bg-calc {
+    background: #363952; /* Bluish gray-black */
+    width: 100vw; /* Full viewport width */
+    height: 100vh; /* Full viewport height */
+    display: flex; /* To center content */
+    justify-content: center; /* Horizontally center */
+    // align-items: center; /* Vertically center */
+    color: white; /* Text color */
+    padding: 0; /* Remove any default padding */
+    overflow: hidden; /* Prevent scrolling */
+  }
+
+  .buttons-screen {
+    background: #2a2a33;
+    padding: 20px;
+    margin: 20px;
+  }
+
+  .output-screen{
+    padding: 30px;
+    background: #363952;
+    // height: 20px;
+    // width: 300px;
+
+  }
+  ul.navbar-nav {
+    background-color: rgba(255, 0, 0, 0.1); /* light red for testing */
+  }
+
+  .card:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease-in-out;
+  }

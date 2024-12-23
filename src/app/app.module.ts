@@ -26,6 +26,21 @@ import { TodoListComponent } from './todo-list/todo-list.component';
 import { CalculatorComponent } from './calculator/calculator.component';
 import { DataManipulationComponent } from './data-manipulation/data-manipulation.component';
 import { QuizComponent } from './quiz/quiz.component';
+import { BudgetTrackerComponent } from './budget-tracker/budget-tracker.component';
+import { PracticeComponent } from './practice/practice.component';
+import { HabitTrackerComponent } from './habit-tracker/habit-tracker.component';
+import { DynamicComponent } from './dynamic/dynamic.component';
+import { HighlightDirective } from './Directive/highlight.directive';
+import { DesignComponent } from './design/design.component';
+import { DynamicTableComponent } from './dynamic-table/dynamic-table.component';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatPaginatorModule} from '@angular/material/paginator';
+import {MatTableModule} from '@angular/material/table';
+import {MatInputModule} from '@angular/material/input';
+import { RealTimeSearchComponent } from './real-time-search/real-time-search.component';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { HttpClientModule } from '@angular/common/http';
+import { DependentDropdownsComponent } from './dependent-dropdowns/dependent-dropdowns.component';
 // import { FilterPipe } from './filter.pipe';
 @NgModule({
   declarations: [
@@ -44,7 +59,16 @@ import { QuizComponent } from './quiz/quiz.component';
     TodoListComponent,
     CalculatorComponent,
     DataManipulationComponent,
-    QuizComponent
+    QuizComponent,
+    BudgetTrackerComponent,
+    PracticeComponent,
+    HabitTrackerComponent,
+    DynamicComponent,
+    HighlightDirective,
+    DesignComponent,
+    DynamicTableComponent,
+    RealTimeSearchComponent,
+    DependentDropdownsComponent
     // FilterPipe
   ],
   imports: [
@@ -56,7 +80,15 @@ import { QuizComponent } from './quiz/quiz.component';
     ReactiveFormsModule,
     MatSidenavModule,
     MatToolbarModule, MatButtonModule, MatIconModule,
-    MatSlideToggleModule
+    MatSlideToggleModule,
+    MatFormFieldModule,
+    MatPaginatorModule,
+    MatTableModule,
+    MatInputModule,
+    MatProgressSpinnerModule,
+    HttpClientModule
+
+
   ],
   providers: [],
   bootstrap: [AppComponent]

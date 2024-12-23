@@ -1,0 +1,18 @@
+.leave-count {
+    background-color: rgb(6, 197, 6);
+    border-radius: 50%;
+    height: 42px; /* Adjust size of the circle */
+    width: 43px; /* Adjust size of the circle */
+    padding: 11px; /* Adjust padding for the circle */
+    vertical-align: middle;
+  }
+
+  .line {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 1px; /* Line width */
+    background-color: #ebe1e1;
+    height: 70px !important; /* Set the height of the line to fit within the card */
+  }

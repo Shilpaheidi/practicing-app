@@ -1,0 +1,99 @@
+<div class="container mt-4">
+    <h2 class="text-center mb-4">Budget Tracker</h2>
+  
+    <!-- Summary Section -->
+    <div class="row text-center mb-4">
+      <div class="col-md-4">
+        <div class="card bg-success text-white">
+          <div class="card-body">
+            <h5>Total Income</h5>
+            <h3>{{ totalIncome | currency }}</h3>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card bg-danger text-white">
+          <div class="card-body">
+            <h5>Total Expense</h5>
+            <h3>{{ totalExpense | currency }}</h3>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card bg-primary text-white">
+          <div class="card-body">
+            <h5>Balance</h5>
+            <h3>{{ balance | currency }}</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <!-- Add Transaction Section -->
+    <form class="mb-4" (submit)="addTransaction()">
+      <div class="row">
+        <div class="col-md-4">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Description"
+            [(ngModel)]="newTransaction.description"
+            name="description"
+            required
+          />
+        </div>
+        <div class="col-md-3">
+          <input
+            type="number"
+            class="form-control"
+            placeholder="Amount"
+            [(ngModel)]="newTransaction.amount"
+            name="amount"
+            required
+          />
+        </div>
+        <div class="col-md-3">
+          <select
+            class="form-control"
+            [(ngModel)]="newTransaction.type"
+            name="type"
+            required
+          >
+            <option value="" disabled selected>Type</option>
+            <option value="income">Income</option>
+            <option value="expense">Expense</option>
+          </select>
+        </div>
+        <div class="col-md-2">
+          <button class="btn btn-success w-100">Add</button>
+        </div>
+      </div>
+    </form>
+  
+    <!-- Transaction List -->
+    <div class="table-responsive">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>Description</th>
+            <th>Amount</th>
+            <th>Type</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let transaction of transactions; let i = index">
+            <td>{{ transaction.description }}</td>
+            <td>{{ transaction.amount | currency }}</td>
+            <td>{{ transaction.type }}</td>
+            <td>
+              <button class="btn btn-danger btn-sm" (click)="deleteTransaction(i)">
+                Delete
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  

@@ -1,0 +1,71 @@
+<div class="container">
+    <h2>Dynamic User Table</h2>
+  
+    <!-- Add User Form -->
+    <form [formGroup]="userForm" (ngSubmit)="onAddUser()">
+      <mat-form-field>
+        <input matInput placeholder="Name" formControlName="name" />
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Email" formControlName="email" />
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Role" formControlName="role" />
+      </mat-form-field>
+      <button mat-raised-button color="primary" type="submit">Add User</button>
+    </form>
+  
+    <!-- Filter Input -->
+    <mat-form-field>
+      <input matInput placeholder="Search" [(ngModel)]="searchText" (ngModelChange)="applyFilter()" />
+    </mat-form-field>
+  
+    <!-- Dynamic Table -->
+    <table mat-table [dataSource]="filteredData" class="mat-elevation-z8">
+      <!-- ID Column -->
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef (click)="sortData('id')"> ID </th>
+        <td mat-cell *matCellDef="let user"> {{ user.id }} </td>
+      </ng-container>
+  
+      <!-- Name Column -->
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef (click)="sortData('name')"> Name </th>
+        <td mat-cell *matCellDef="let user">
+          <input matInput [(ngModel)]="user.name" />
+        </td>
+      </ng-container>
+  
+      <!-- Email Column -->
+      <ng-container matColumnDef="email">
+        <th mat-header-cell *matHeaderCellDef (click)="sortData('email')"> Email </th>
+        <td mat-cell *matCellDef="let user">
+          <input matInput [(ngModel)]="user.email" />
+        </td>
+      </ng-container>
+  
+      <!-- Role Column -->
+      <ng-container matColumnDef="role">
+        <th mat-header-cell *matHeaderCellDef (click)="sortData('role')"> Role </th>
+        <td mat-cell *matCellDef="let user">
+          <input matInput [(ngModel)]="user.role" />
+        </td>
+      </ng-container>
+  
+      <!-- Actions Column -->
+      <ng-container matColumnDef="actions">
+        <th mat-header-cell *matHeaderCellDef> Actions </th>
+        <td mat-cell *matCellDef="let user">
+          <button mat-button color="warn" (click)="onDeleteUser(user.id)">Delete</button>
+        </td>
+      </ng-container>
+  
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  
+    <!-- Pagination -->
+    <mat-paginator [length]="users.length" [pageSize]="5" (page)="onPaginateChange($event)">
+    </mat-paginator>
+  </div>
+  

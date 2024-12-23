@@ -6,6 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./modal.component.scss']
 })
 export class ModalComponent {
+  title= '';
+  message!: string;
   constructor() {}
 
   close() {
