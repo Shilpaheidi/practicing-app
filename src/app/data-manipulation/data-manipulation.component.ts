@@ -151,38 +151,38 @@ export class DataManipulationComponent {
 //   Task: Group Products by Category
 // You have an array of products. Your task is to group the products by their category into an object, where each key is a category name, and the value is an array of products in that category.
 
-const products = [
-  { category: "Clothing", name: "Shirt", price: 30 },
-  { category: "Clothing", name: "Jeans", price: 50 },
-  { category: "Electronics", name: "Phone", price: 500 },
-  { category: "Clothing", name: "Jacket", price: 100 },
-  { category: "Furniture", name: "Sofa", price: 400 },
-  { category: "Electronics", name: "Laptop", price: 1000 }
-];
+// const products = [
+//   { category: "Clothing", name: "Shirt", price: 30 },
+//   { category: "Clothing", name: "Jeans", price: 50 },
+//   { category: "Electronics", name: "Phone", price: 500 },
+//   { category: "Clothing", name: "Jacket", price: 100 },
+//   { category: "Furniture", name: "Sofa", price: 400 },
+//   { category: "Electronics", name: "Laptop", price: 1000 }
+// ];
 
-let clothing: any[] = [];
-let electronics: any[] = [];
-let furniture: any[] = [];
+// let clothing: any[] = [];
+// let electronics: any[] = [];
+// let furniture: any[] = [];
 
 
-let groupingProductsByClothingCategory = products.filter((product) =>
-  product.category === 'Clothing'
-);
+// let groupingProductsByClothingCategory = products.filter((product) =>
+//   product.category === 'Clothing'
+// );
 
-let groupingProductsByElectronicsCategory = products.filter((product) =>
-  product.category === 'Electronics'
-);
+// let groupingProductsByElectronicsCategory = products.filter((product) =>
+//   product.category === 'Electronics'
+// );
 
-let groupingProductsByFurnitureCategory = products.filter((product) =>
-  product.category === 'Furniture'
-);
+// let groupingProductsByFurnitureCategory = products.filter((product) =>
+//   product.category === 'Furniture'
+// );
 
-let result ={ clothing:groupingProductsByClothingCategory,
-  electronics:groupingProductsByElectronicsCategory,
-  furniture:groupingProductsByFurnitureCategory
-}
+// let result ={ clothing:groupingProductsByClothingCategory,
+//   electronics:groupingProductsByElectronicsCategory,
+//   furniture:groupingProductsByFurnitureCategory
+// }
 
-console.log('result',result);
+// console.log('result',result);
 
 
 
@@ -207,3 +207,30 @@ console.log('result',result);
 // console.log('Grouped Products:', groupedProducts);
 
 
+const products = [
+  { category: "Clothing", name: "Shirt", price: 30 },
+  { category: "Clothing", name: "Jeans", price: 50 },
+  { category: "Electronics", name: "Phone", price: 500 },
+  { category: "Clothing", name: "Jacket", price: 100 },
+  { category: "Furniture", name: "Sofa", price: 400 },
+  { category: "Electronics", name: "Laptop", price: 1000 }
+];
+
+const groupedProducts = products.reduce((result:any, product) => {
+  // Check if the category already exists in the result object
+  if (!result[product.category]) {
+    // Initialize with an empty array and a totalPrice of 0
+    result[product.category] = {
+      products: [],
+      totalPrice: 0
+    };
+  }
+  // Add the product to the category's products array
+  result[product.category].products.push(product);
+  // Add the price to the totalPrice
+  result[product.category].totalPrice += product.price;
+
+  return result;
+}, {});
+
+console.log('groupedProducts',groupedProducts);

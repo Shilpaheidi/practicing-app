@@ -1,0 +1,19 @@
+<div class="container">
+    <h2>Search Filter with Debounce</h2>
+  
+    <!-- Search Input -->
+    <input
+      type="text"
+      [(ngModel)]="searchQuery"
+      (ngModelChange)="onSearch()"
+      placeholder="Search..."
+      class="search-input"
+    />
+  
+    <!-- Filtered List -->
+    <div *ngIf="filteredItems.length === 0">No results found!</div>
+    <ul *ngIf="filteredItems.length > 0">
+      <li *ngFor="let item of filteredItems">{{ item }}</li>
+    </ul>
+  </div>
+  

@@ -41,7 +41,33 @@ import { RealTimeSearchComponent } from './real-time-search/real-time-search.com
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { HttpClientModule } from '@angular/common/http';
 import { DependentDropdownsComponent } from './dependent-dropdowns/dependent-dropdowns.component';
+import {MatSelectModule} from '@angular/material/select';
+import { FileUploadComponent } from './file-upload/file-upload.component';
+import { SearchFilterComponent } from './search-filter/search-filter.component';
+import { TestimonialCarouselComponent } from './testimonial-carousel/testimonial-carousel.component';
+import { ComplexDashboardComponent } from './complex-dashboard/complex-dashboard.component';
+import { TodoComponent } from './todo/todo.component';
+import { VotingDashboardComponent } from './voting-dashboard/voting-dashboard.component';
+import { VotingButtonComponent } from './voting-button/voting-button.component';
+import { ChatHistoryComponent } from './chat-history/chat-history.component';
+import { ChatInputComponent } from './chat-input/chat-input.component';
+import { ProductListComponent } from './product-list/product-list.component';
+import { CartComponent } from './cart/cart.component';
+import { SearchComponent } from './search/search.component';
+import { DynamicFormComponent } from './dynamic-form/dynamic-form.component';
+import { TaskListComponent } from './task-list/task-list.component';
+import { TaskFormComponent } from './task-form/task-form.component';
+import { TaskEditModalComponent } from './task-edit-modal/task-edit-modal.component';
+import { ReusableComponent } from './reusable/reusable.component';
+import { UserListComponent } from './user-list/user-list.component';
+import { PostListComponent } from './post-list/post-list.component';
+import { ReusableTableSearchComponent } from './reusable-table-search/reusable-table-search.component';
+import { SidebarComponent } from './sidebar/sidebar.component';
+import { DesignPracticeComponent } from './design-practice/design-practice.component';
+import { TableComponent } from './shared/table/table.component';
+import { SideNavComponent } from './side-nav/side-nav.component';
 // import { FilterPipe } from './filter.pipe';
+import { MatListModule } from '@angular/material/list';
 @NgModule({
   declarations: [
     AppComponent,
@@ -68,7 +94,31 @@ import { DependentDropdownsComponent } from './dependent-dropdowns/dependent-dro
     DesignComponent,
     DynamicTableComponent,
     RealTimeSearchComponent,
-    DependentDropdownsComponent
+    DependentDropdownsComponent,
+    FileUploadComponent,
+    SearchFilterComponent,
+    TestimonialCarouselComponent,
+    ComplexDashboardComponent,
+    TodoComponent,
+    VotingDashboardComponent,
+    VotingButtonComponent,
+    ChatHistoryComponent,
+    ChatInputComponent,
+    ProductListComponent,
+    CartComponent,
+    SearchComponent,
+    DynamicFormComponent,
+    TaskListComponent,
+    TaskFormComponent,
+    TaskEditModalComponent,
+    ReusableComponent,
+    UserListComponent,
+    PostListComponent,
+    ReusableTableSearchComponent,
+    SidebarComponent,
+    DesignPracticeComponent,
+    TableComponent,
+    SideNavComponent
     // FilterPipe
   ],
   imports: [
@@ -86,7 +136,9 @@ import { DependentDropdownsComponent } from './dependent-dropdowns/dependent-dro
     MatTableModule,
     MatInputModule,
     MatProgressSpinnerModule,
-    HttpClientModule
+    HttpClientModule,
+    MatSelectModule,
+    MatListModule
 
 
   ],

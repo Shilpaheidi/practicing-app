@@ -1,0 +1,35 @@
+<div class="container">
+  <h2>File Upload with Preview and Validation</h2>
+  <form>
+    <input type="file" (change)="onFileSelected($event)" accept="image/*" />
+    <div *ngIf="errorMessage" class="error">{{ errorMessage }}</div>
+
+    <div *ngIf="previewUrl" class="preview">
+      <h3>Preview:</h3>
+      <img [src]="previewUrl" alt="Image Preview" />
+      <p><strong>File Name:</strong> {{ fileInfo?.name }}</p>
+      <p><strong>File Size:</strong> {{ fileInfo?.size | number }} bytes</p>
+    </div>
+
+    <div class="button-group">
+      <button
+        mat-raised-button
+        color="warn"
+        type="button"
+        (click)="clearFile()"
+        [disabled]="!previewUrl"
+      >
+        Clear
+      </button>
+      <button
+        mat-raised-button
+        color="primary"
+        type="button"
+        (click)="submitFile()"
+        [disabled]="!previewUrl"
+      >
+        Submit
+      </button>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,11 @@
+<h1>Voting Dashboard</h1>
+    <ul>
+      <li *ngFor="let candidate of candidates">
+        <span>{{ candidate.name }}: {{ candidate.votes }} votes</span>
+        <!-- Pass the candidate to the child component -->
+        <app-voting-button
+          [candidateName]="candidate.name"
+          (vote)="handleVote($event)">
+        </app-voting-button>
+      </li>
+    </ul>

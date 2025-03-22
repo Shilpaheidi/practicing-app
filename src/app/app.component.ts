@@ -9,6 +9,12 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+
+  displayedColumns: string[] = ['id', 'name', 'age', 'email'];
+  data = [
+    { id: 1, name: 'John Doe', age: 28, email: 'john@example.com' },
+    { id: 2, name: 'Jane Smith', age: 32, email: 'jane@example.com' }
+  ];
   // title = 'angular-data-access';
   // taskForm!: FormGroup;
   // searchText: string = '';

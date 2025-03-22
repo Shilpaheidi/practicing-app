@@ -1,0 +1,19 @@
+<form [formGroup]="form">
+    <!-- Select All Checkbox -->
+    <label>
+      <input type="checkbox" formControlName="selectAll" (change)="toggleSelectAll()" />
+      Select All
+    </label>
+  
+    <!-- Individual Checkboxes -->
+    <div *ngFor="let item of items; let i = index">
+      <label>
+        <input type="checkbox" [formControl]="itemsArray.controls[i]" />
+        {{ item.name }}
+      </label>
+    </div>
+  </form>
+  
+  <!-- Display selected values -->
+  <p>Selected Values: {{ getSelectedItems() | json }}</p>
+  

@@ -1,1 +1,40 @@
-<p>dependent-dropdowns works!</p>
+<div class="container">
+    <h2>Dynamic Dependent Dropdowns</h2>
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <!-- Category Dropdown -->
+      <mat-form-field appearance="fill">
+        <mat-label>Select Category</mat-label>
+        <mat-select formControlName="category" (selectionChange)="onCategoryChange($event.value)">
+          <mat-option *ngFor="let category of categories" [value]="category">{{ category }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <div *ngIf="form.get('category')?.touched && form.get('category')?.invalid" class="error">
+        Category is required.
+      </div>
+  
+      <!-- Items Dropdown -->
+      <mat-form-field appearance="fill">
+        <mat-label>Select Item</mat-label>
+        <mat-select formControlName="item" [disabled]="!items.length">
+          <mat-option *ngFor="let item of items" [value]="item">{{ item }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <div *ngIf="form.get('item')?.touched && form.get('item')?.invalid" class="error">
+        Item is required.
+      </div>
+  
+      <!-- Buttons -->
+      <div class="button-group">
+        <button mat-raised-button color="primary" type="submit" [disabled]="form.invalid">Submit</button>
+        <button mat-raised-button color="warn" type="button" (click)="resetForm()">Reset</button>
+      </div>
+    </form>
+  
+    <!-- Output -->
+    <div *ngIf="submittedData" class="output">
+      <h3>Selected Data:</h3>
+      <p><strong>Category:</strong> {{ submittedData.category }}</p>
+      <p><strong>Item:</strong> {{ submittedData.item }}</p>
+    </div>
+  </div>
+  

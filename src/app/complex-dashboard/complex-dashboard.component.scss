@@ -1,0 +1,19 @@
+.small-card{
+    background: #fff !important;
+}
+
+// .blue{
+//     background-color: blue;
+//     height: fit-content;
+//     width: 2px;
+// }
+.blue {
+    background-color: blue;
+    height: 70px; /* Set a fixed height */
+    width: 3px;
+    display: block; /* Ensure it doesn't collapse */
+}
+
+.setcard-bg{
+    background-color: #F2F4F3; 
+}

@@ -1,0 +1,10 @@
+<h1>Cart</h1>
+<div *ngIf="cartItems.length; else emptyCart">
+  <div *ngFor="let item of cartItems; let i = index" class="cart-item">
+    <span>{{ item.name }} - ${{ item.price }}</span>
+    <button (click)="removeFromCart(i)">Remove</button>
+  </div>
+  <p>Total: ${{ calculateTotal() }}</p>
+</div>
+
+<ng-template #emptyCart><p>The cart is empty.</p></ng-template>

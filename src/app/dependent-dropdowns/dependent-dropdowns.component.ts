@@ -27,14 +27,28 @@ export class DependentDropdownsComponent {
   }
 
   onCategoryChange(category:string):void{
+    console.log('category', category);
+    
      this.items = this.data[category] || [];
+
+     console.log('this.data[category]', this.data[category]);
      this.form.get('item')?.reset();
   }
 
-  onSubmit():void{
-      if (this.form.valid) {
-        
-      }
+  onSubmit(): void {
+    if (this.form.valid) {
+      this.submittedData = this.form.value;
+      console.log('Submitted Data:', this.form.value);
+    }
   }
+
+  resetForm(): void {
+    this.form.reset();
+    this.items = [];
+    this.submittedData = null;
+  }
+
+  // https://chatgpt.com/c/67695de9-ea28-8005-a9f2-30738d6a456b
+
 
 }

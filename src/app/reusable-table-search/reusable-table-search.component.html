@@ -1,0 +1,34 @@
+<input
+  type="text"
+  [formControl]="searchControl"
+  placeholder="Search..."
+/>
+
+<div>
+    <!-- Search Input -->
+    <input
+      type="text"
+      [(ngModel)]="searchKeyword"
+      placeholder="Search..."
+      (input)="applyFilter()"
+    />
+
+    <!-- Column Filter Dropdown -->
+    <select [(ngModel)]="selectedColumn" (change)="applyFilter()">
+      <option value="">All Columns</option>
+      <option *ngFor="let column of columns" [value]="column.columnDef">
+        {{ column.header }}
+      </option>
+    </select>
+  </div>
+
+  <!-- Table -->
+  <table mat-table [dataSource]="filteredData" class="mat-elevation-z8">
+    <ng-container *ngFor="let column of columns" [matColumnDef]="column.columnDef">
+      <th mat-header-cell *matHeaderCellDef>{{ column.header }}</th>
+      <td mat-cell *matCellDef="let row">{{ row[column.columnDef] }}</td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>

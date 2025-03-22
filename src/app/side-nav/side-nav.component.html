@@ -1,0 +1,48 @@
+<mat-sidenav-container class="sidenav-container">
+    <mat-sidenav
+      #sidenav
+      [(opened)]="opened"
+      [mode]="isMobile ? 'over' : 'side'"
+      [fixedInViewport]="isMobile"
+      class="sidenav"
+    >
+      <div class="sidebar-header">
+        <h3>CORONA</h3>
+        <button mat-icon-button (click)="sidenav.close()" *ngIf="isMobile">
+          <mat-icon>close</mat-icon>
+        </button>
+      </div>
+  
+      <mat-nav-list>
+        <a mat-list-item routerLink="/dashboard" class="text-neutral-100">
+          <mat-icon>dashboard</mat-icon>  Dashboard
+        </a>
+        <a mat-list-item routerLink="/rtl">
+          <mat-icon>language</mat-icon> RTL
+        </a>
+        <a mat-list-item routerLink="/widgets">
+          <mat-icon>widgets</mat-icon> Widgets
+        </a>
+        <a mat-list-item routerLink="/charts">
+          <mat-icon>bar_chart</mat-icon> Charts
+        </a>
+        <a mat-list-item routerLink="/notifications">
+          <mat-icon>notifications</mat-icon> Notifications
+        </a>
+      </mat-nav-list>
+    </mat-sidenav>
+  
+    <mat-sidenav-content>
+      <mat-toolbar color="primary">
+        <button mat-icon-button (click)="sidenav.toggle()" *ngIf="isMobile">
+          <mat-icon>menu</mat-icon>
+        </button>
+        <span>Dashboard</span>
+      </mat-toolbar>
+  
+      <div class="content">
+        <ng-content></ng-content>
+      </div>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+  
