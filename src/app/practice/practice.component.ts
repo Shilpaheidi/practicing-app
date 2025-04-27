@@ -20,18 +20,18 @@ export class PracticeComponent {
 
 
 
-function findLargestWord(words: string) {
-  const cleanedWords = words.replace(/[^a-zA-Z\s]/g, "");
-  let checkLongestWord = cleanedWords.split(" ");
-  let longestWord = '';
-  for (let index = 0; index < checkLongestWord.length; index++) {
-    if (checkLongestWord[index].length > longestWord.length) {
-      longestWord = checkLongestWord[index];
-    }
-  }
-  return longestWord;
-}
-console.log('longestword',findLargestWord("The quick brown fox jumped over the lazy dog."));
+// function findLargestWord(words: string) {
+//   const cleanedWords = words.replace(/[^a-zA-Z\s]/g, "");
+//   let checkLongestWord = cleanedWords.split(" ");
+//   let longestWord = '';
+//   for (let index = 0; index < checkLongestWord.length; index++) {
+//     if (checkLongestWord[index].length > longestWord.length) {
+//       longestWord = checkLongestWord[index];
+//     }
+//   }
+//   return longestWord;
+// }
+// console.log('longestword',findLargestWord("The quick brown fox jumped over the lazy dog."));
 
 
 
@@ -124,29 +124,29 @@ console.log('longestword',findLargestWord("The quick brown fox jumped over the l
 // console.log(findSecondLargestNumber([1])); // Output: null
 
 
-function findSecondLargestNumber(nums: number[]) {
-  if (nums.length < 2 ) {
-    return  null;
-  }
-  let largestNumber = -Infinity;
-  let secondLargestNumber = -Infinity;
-  for (let index = 0; index < nums.length; index++) {
+// function findSecondLargestNumber(nums: number[]) {
+//   if (nums.length < 2 ) {
+//     return  null;
+//   }
+//   let largestNumber = -Infinity;
+//   let secondLargestNumber = -Infinity;
+//   for (let index = 0; index < nums.length; index++) {
 
-    if (nums[index] > largestNumber) {
-      secondLargestNumber = largestNumber;
-      largestNumber = nums[index];
-    } else if (nums[index] > secondLargestNumber && nums[index] !== largestNumber) {
-      secondLargestNumber = nums[index];
-    }
-  }
+//     if (nums[index] > largestNumber) {
+//       secondLargestNumber = largestNumber;
+//       largestNumber = nums[index];
+//     } else if (nums[index] > secondLargestNumber && nums[index] !== largestNumber) {
+//       secondLargestNumber = nums[index];
+//     }
+//   }
 
-  return secondLargestNumber;
+//   return secondLargestNumber;
 
-}
+// }
 
-console.log(findSecondLargestNumber([5, 3, 8, 1,8, 7])); // Output: 7
-console.log(findSecondLargestNumber([10, 20])); // Output: 10
-console.log(findSecondLargestNumber([1])); // Output: null
+// console.log(findSecondLargestNumber([5, 3, 8, 1,8, 7])); // Output: 7
+// console.log(findSecondLargestNumber([10, 20])); // Output: 10
+// console.log(findSecondLargestNumber([1])); // Output: null
 
 // function reverseSentence(sentence:String){
 
@@ -184,3 +184,24 @@ console.log(findSecondLargestNumber([1])); // Output: null
 // }
 // const sentence = "The quick brown fox jumps over the lazy dog. The dog was not amused.";
 // console.log('sentence',countWordFrequency(sentence));
+
+// function flattenArray(arr: any[]): any[] {
+//   let iterms: any[] = [];
+
+//   for (let index = 0; index < arr.length; index++) {
+//     if (Array.isArray(arr[index])) {
+//       console.log('arrayIndex', arr[index]);
+      
+//       iterms.push(...flattenArray(arr[index]));
+//       console.log('iterms', iterms);
+//       console.log('flattenArray', ...flattenArray(arr[index]));
+//     } else {
+//       iterms.push(arr[index]);
+//     }
+//   }
+//   return iterms;
+// }
+
+// const nestedArray = [1, [2, 3], [4, [5, 6]], 7];
+// const flatArray = flattenArray(nestedArray);
+// console.log('flatArray', flatArray); // Output: [1, 2, 3, 4, 5, 6, 7]

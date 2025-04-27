@@ -1,0 +1,27 @@
+/* Profile Card Hover Effect */
+.card {
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+  }
+  .card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Social Icon Styling */
+  .social-icons a {
+    font-size: 1.5rem;
+    text-decoration: none;
+  }
+  
+  .social-icons a:hover {
+    opacity: 0.7;
+  }
+  
+  .card .btn:hover {
+    filter: brightness(0.9);
+  }
+
+  @media (max-width: 575px) {
+    .card { padding: 2rem 1rem; }
+  }
+  

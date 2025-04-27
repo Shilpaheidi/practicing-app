@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { MatCheckboxModule } from '@angular/material/checkbox';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ParentComponent } from './parent/parent.component';
@@ -68,6 +68,26 @@ import { TableComponent } from './shared/table/table.component';
 import { SideNavComponent } from './side-nav/side-nav.component';
 // import { FilterPipe } from './filter.pipe';
 import { MatListModule } from '@angular/material/list';
+import { StatsCardComponent } from './stats-card/stats-card.component';
+import { CompanyComponent } from './company/company.component';
+import { SidebarMenuComponent } from './sidebar-menu/sidebar-menu.component';
+import { AddTaskComponent } from './add-task/add-task.component';
+import { ComplicatedDashboardComponent } from './complicated-dashboard/complicated-dashboard.component';
+import { NavBarComponent } from './nav-bar/nav-bar.component';
+import { MaterialToolbarComponent } from './material-toolbar/material-toolbar.component';
+import { ProjectCardComponent } from './project-card/project-card.component';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { MatCardModule } from '@angular/material/card';
+import { LeaveDesigndComponent } from './leave-designd/leave-designd.component';
+import { DashboardTaskComponent } from './dashboard-task/dashboard-task.component';
+import { CardComponent } from './card/card.component';
+import { AttendanceSummaryComponent } from './attendance-summary/attendance-summary.component';
+import { ProjectProgressComponent } from './project-progress/project-progress.component';
+import { TeamMebersOverviewComponent } from './team-mebers-overview/team-mebers-overview.component';
+import { ProjectsStatusOverviewComponent } from './projects-status-overview/projects-status-overview.component';
+import { RecentActivityTimtlineComponent } from './recent-activity-timtline/recent-activity-timtline.component';
+import { UserProfileCardComponent } from './user-profile-card/user-profile-card.component';
+import { DashboardWithCardsComponent } from './dashboard-with-cards/dashboard-with-cards.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -118,7 +138,25 @@ import { MatListModule } from '@angular/material/list';
     SidebarComponent,
     DesignPracticeComponent,
     TableComponent,
-    SideNavComponent
+    SideNavComponent,
+    StatsCardComponent,
+    CompanyComponent,
+    SidebarMenuComponent,
+    AddTaskComponent,
+    ComplicatedDashboardComponent,
+    NavBarComponent,
+    MaterialToolbarComponent,
+    ProjectCardComponent,
+    LeaveDesigndComponent,
+    DashboardTaskComponent,
+    CardComponent,
+    AttendanceSummaryComponent,
+    ProjectProgressComponent,
+    TeamMebersOverviewComponent,
+    ProjectsStatusOverviewComponent,
+    RecentActivityTimtlineComponent,
+    UserProfileCardComponent,
+    DashboardWithCardsComponent
     // FilterPipe
   ],
   imports: [
@@ -138,7 +176,10 @@ import { MatListModule } from '@angular/material/list';
     MatProgressSpinnerModule,
     HttpClientModule,
     MatSelectModule,
-    MatListModule
+    MatListModule,
+    MatCheckboxModule,
+    MatProgressBarModule,
+    MatCardModule
 
 
   ],

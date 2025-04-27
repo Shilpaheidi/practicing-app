@@ -1,0 +1,52 @@
+<div class="d-flex flex-column bg-dark text-white h-100 sidebar-wrapper">
+    <!-- Dropdown -->
+    <div class="dropdown p-3">
+      <button class="btn btn-dark dropdown-toggle w-100 text-start" type="button" data-bs-toggle="dropdown">
+        22746 - RushTax Inc.
+      </button>
+      <ul class="dropdown-menu dropdown-menu-dark w-100">
+        <li><a class="dropdown-item" href="#">Company A</a></li>
+        <li><a class="dropdown-item" href="#">Company B</a></li>
+      </ul>
+    </div>
+  
+    <!-- Manage section -->
+    <div class="px-3">
+      <small class="text-muted text-uppercase">Manage</small>
+      <ul class="nav flex-column">
+        <li class="nav-item py-1 d-flex align-items-center">
+          <mat-icon class="me-2">group</mat-icon> Clients
+        </li>
+        <li class="nav-item py-1 d-flex align-items-center">
+          <mat-icon class="me-2">account_balance</mat-icon> Bank
+        </li>
+        <li class="nav-item py-1 d-flex align-items-center">
+          <mat-icon class="me-2">calendar_month</mat-icon> Calendar
+        </li>
+        <li class="nav-item py-1 d-flex align-items-center">
+          <mat-icon class="me-2">bar_chart</mat-icon> Reports
+        </li>
+      </ul>
+    </div>
+  
+    <!-- Messages -->
+    <div class="px-3 mt-4">
+      <small class="text-muted text-uppercase">Messages</small>
+      <div class="mt-2" *ngFor="let msg of messages">
+        <div class="d-flex align-items-center justify-content-between py-2">
+          <div class="d-flex align-items-center">
+            <img [src]="msg.avatar" class="avatar me-2" />
+            <span>{{ msg.name }}</span>
+          </div>
+          <span class="status-dot" [ngClass]="msg.status"></span>
+        </div>
+      </div>
+    </div>
+  
+    <!-- Bottom Profile -->
+    <div class="mt-auto p-3 border-top border-secondary d-flex align-items-center">
+      <img src="assets/profile.jpg" class="avatar me-2" />
+      <span>Budi Tanrim</span>
+    </div>
+  </div>
+  

@@ -207,6 +207,57 @@ export class DataManipulationComponent {
 // console.log('Grouped Products:', groupedProducts);
 
 
+// const products = [
+//   { category: "Clothing", name: "Shirt", price: 30 },
+//   { category: "Clothing", name: "Jeans", price: 50 },
+//   { category: "Electronics", name: "Phone", price: 500 },
+//   { category: "Clothing", name: "Jacket", price: 100 },
+//   { category: "Furniture", name: "Sofa", price: 400 },
+//   { category: "Electronics", name: "Laptop", price: 1000 }
+// ];
+
+// const groupedProducts = products.reduce((result:any, product) => {
+//   // Check if the category already exists in the result object
+//   if (!result[product.category]) {
+//     // Initialize with an empty array and a totalPrice of 0
+//     result[product.category] = {
+//       products: [],
+//       totalPrice: 0
+//     };
+//   }
+//   // Add the product to the category's products array
+//   result[product.category].products.push(product);
+//   // Add the price to the totalPrice
+//   result[product.category].totalPrice += product.price;
+
+//   return result;
+// }, {});
+
+// console.log('groupedProducts',groupedProducts);
+
+// let products = [
+//   { category: "Clothing", name: "Shirt", price: 30 },
+//   { category: "Clothing", name: "Jeans", price: 50 },
+//   { category: "Electronics", name: "Phone", price: 500 },
+//   { category: "Clothing", name: "Jacket", price: 100 },
+//   { category: "Furniture", name: "Sofa", price: 400 },
+//   { category: "Electronics", name: "Laptop", price: 1000 }
+// ];
+
+// let averagePrice = 0;
+// let aboveAverageProducts = [];
+
+// function calculateAverageAndFilter() {
+//   const total = products.reduce((sum, product) => sum + product.price, 0);
+//   averagePrice = total / products.length;
+
+//   aboveAverageProducts =  products.filter(product => product.price > averagePrice);
+//   console.log('averagePrice', averagePrice);
+//   console.log('aboveAverageProducts', aboveAverageProducts);
+//   return { averagePrice, aboveAverageProducts };
+// }
+// console.log('calculateAverageAndFilter', calculateAverageAndFilter());
+
 const products = [
   { category: "Clothing", name: "Shirt", price: 30 },
   { category: "Clothing", name: "Jeans", price: 50 },
@@ -216,21 +267,14 @@ const products = [
   { category: "Electronics", name: "Laptop", price: 1000 }
 ];
 
-const groupedProducts = products.reduce((result:any, product) => {
-  // Check if the category already exists in the result object
-  if (!result[product.category]) {
-    // Initialize with an empty array and a totalPrice of 0
-    result[product.category] = {
-      products: [],
-      totalPrice: 0
-    };
-  }
-  // Add the product to the category's products array
-  result[product.category].products.push(product);
-  // Add the price to the totalPrice
-  result[product.category].totalPrice += product.price;
 
-  return result;
-}, {});
 
-console.log('groupedProducts',groupedProducts);
+const categoryCount =  products.reduce((acc:any,produt:any)=>{
+
+acc[produt.category] = (acc[produt.category] || 0) + 1;
+
+  return acc;
+},{})
+
+
+console.log('categoryCount',categoryCount);

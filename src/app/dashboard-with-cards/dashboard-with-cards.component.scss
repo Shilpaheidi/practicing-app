@@ -1,0 +1,16 @@
+
+/* Card Hover Effect */
+.card {
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+  }
+  .card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Progress Bar Styling */
+  .progress-bar {
+    height: 10px;
+    background-color: #007bff;
+  }
+  

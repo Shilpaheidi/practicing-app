@@ -1,0 +1,9 @@
+
+<div class="dashboard">
+    <app-card
+      *ngFor="let card of cards"
+      [title]="card.title"
+      [count]="card.count"
+      (cardClicked)="onCardClick($event)">
+    </app-card>
+  </div>

@@ -1,0 +1,197 @@
+<!-- <mat-toolbar
+  color="primary"
+  class="d-flex justify-content-between align-items-center flex-wrap px-3"
+>
+  <div class="d-flex align-items-center flex-wrap gap-3">
+    <mat-icon class="me-2">ads_click</mat-icon>
+    <span class="fw-bold">Material</span>
+    <span>Components</span>
+    <span>CDK</span>
+    <span>Guides</span>
+  </div>
+
+  <div class="d-flex align-items-center flex-wrap gap-3">
+    <mat-icon>expand_more</mat-icon>
+    <span>19.2.11</span>
+    <mat-icon>science</mat-icon>
+    <mat-icon>fiber_manual_record</mat-icon>
+    <mat-icon>code</mat-icon>
+    <span>GitHub</span>
+  </div>
+</mat-toolbar> -->
+
+<!-- <mat-toolbar color="primary" class="custom-toolbar px-3">
+    <div class="container-fluid d-flex flex-wrap align-items-center justify-content-between">
+  
+   
+      <div class="d-flex flex-wrap align-items-center gap-2">
+        <mat-icon>change_history</mat-icon>
+        <a mat-button class="p-0">Material</a>
+        <a mat-button class="p-0">Components</a>
+        <a mat-button class="p-0">CDK</a>
+        <a mat-button class="p-0">Guides</a>
+      </div>
+  
+ 
+      <div class="d-flex flex-wrap align-items-center gap-2 mt-2 mt-md-0">
+        <div class="d-flex align-items-center gap-1">
+          <mat-icon>arrow_drop_down</mat-icon>
+          <span>19.2.11</span>
+        </div>
+        <mat-icon>brush</mat-icon>
+        <mat-icon>toggle_on</mat-icon>
+        <a mat-button class="d-flex align-items-center gap-1 p-0">
+          <mat-icon>github</mat-icon> GitHub
+        </a>
+      </div>
+  
+    </div>
+  </mat-toolbar> -->
+  
+  
+  
+  <!-- <mat-toolbar color="primary" class="custom-toolbar px-3">
+    <div class="container-fluid d-flex justify-content-between align-items-center flex-wrap">
+     
+      <div class="d-flex align-items-center gap-2">
+        <mat-icon>change_history</mat-icon>
+      </div>
+  
+      <span class="fw-bold d-none d-sm-inline">Material</span>
+  
+   
+      <div class="d-none d-md-flex gap-3">
+        <a mat-button>Components</a>
+        <a mat-button>CDK</a>
+        <a mat-button>Guides</a>
+      </div>
+  
+ 
+      <div class="d-none d-md-flex align-items-center gap-3">
+        <div class="d-flex align-items-center gap-1">
+          <mat-icon>arrow_drop_down</mat-icon>
+          <span>19.2.11</span>
+        </div>
+        <mat-icon>brush</mat-icon>
+        <mat-icon>toggle_on</mat-icon>
+        <a mat-button class="d-flex align-items-center gap-1">
+          <mat-icon>github</mat-icon> GitHub
+        </a>
+      </div>
+  
+
+      <button mat-icon-button class="d-md-none" (click)="showMobileMenu = !showMobileMenu">
+        <mat-icon>menu</mat-icon>
+      </button>
+    </div>
+  
+    <div *ngIf="showMobileMenu" class="d-md-none mt-3 px-4">
+      <div class="d-flex flex-column gap-3 align-items-start">
+        <a mat-button class="w-100 text-start">Components</a>
+        <a mat-button class="w-100 text-start">CDK</a>
+        <a mat-button class="w-100 text-start">Guides</a>
+        <div class="d-flex align-items-center gap-1">
+          <mat-icon>arrow_drop_down</mat-icon>
+          <span>19.2.11</span>
+        </div>
+        <div class="d-flex align-items-center gap-1">
+          <mat-icon>brush</mat-icon>
+          <span>Theme</span>
+        </div>
+        <div class="d-flex align-items-center gap-1">
+          <mat-icon>toggle_on</mat-icon>
+          <span>Toggle</span>
+        </div>
+        <a mat-button class="d-flex align-items-center gap-1">
+          <mat-icon>github</mat-icon> GitHub
+        </a>
+      </div>
+    </div>
+  </mat-toolbar> -->
+  
+  
+  
+
+  <mat-toolbar color="primary" class="custom-toolbar px-3 py-2">
+    <div class="container-fluid d-flex justify-content-between align-items-center flex-wrap">
+      
+      <!-- Left: Logo + Menu Icon -->
+      <div class="d-flex align-items-center gap-2">
+        <button mat-icon-button class="d-md-none" (click)="toggleMenu()">
+          <mat-icon>menu</mat-icon>
+        </button>
+        <mat-icon>change_history</mat-icon>
+        <span class="fw-bold d-none d-sm-inline">Material</span>
+      </div>
+  
+      <!-- Center: Navigation links (visible in md & up) -->
+      <div class="d-none d-md-flex gap-3 align-items-center">
+        <a mat-button>Components</a>
+        <a mat-button>CDK</a>
+        <a mat-button>Guides</a>
+      </div>
+  
+      <!-- Right: Version, theme, toggle, GitHub (visible in md & up) -->
+      <div class="d-none d-md-flex gap-3 align-items-center">
+        <div class="d-flex align-items-center gap-1">
+          <mat-icon>arrow_drop_down</mat-icon>
+          <span>19.2.11</span>
+        </div>
+        <mat-icon>brush</mat-icon>
+        <mat-icon>toggle_on</mat-icon>
+        <a mat-button class="d-flex align-items-center gap-1">
+          <mat-icon>github</mat-icon> GitHub
+        </a>
+      </div>
+    </div>
+  
+    <!-- Mobile Menu -->
+    <!-- <div *ngIf="isMobileMenuOpen" class="d-md-none mt-2 px-3 w-100">
+      <div class="d-flex flex-column gap-3">
+        <a mat-button class="text-start">Components</a>
+        <a mat-button class="text-start">CDK</a>
+        <a mat-button class="text-start">Guides</a>
+  
+        <div class="d-flex align-items-center gap-2">
+          <mat-icon>arrow_drop_down</mat-icon>
+          <span>19.2.11</span>
+        </div>
+        <div class="d-flex align-items-center gap-2">
+          <mat-icon>brush</mat-icon>
+          <span>Theme</span>
+        </div>
+        <div class="d-flex align-items-center gap-2">
+          <mat-icon>toggle_on</mat-icon>
+          <span>Toggle</span>
+        </div>
+        <a mat-button class="d-flex align-items-center gap-2">
+          <mat-icon>github</mat-icon> GitHub
+        </a>
+      </div>
+    </div> -->
+ 
+    <div *ngIf="isMobileMenuOpen" class="d-md-none w-100 px-3 py-2">
+        <div class="d-flex flex-column gap-3">
+      
+          <a mat-button class="text-start ps-2">Components</a>
+          <a mat-button class="text-start ps-2">CDK</a>
+          <a mat-button class="text-start ps-2">Guides</a>
+      
+          <div class="d-flex align-items-center gap-2 ps-2">
+            <mat-icon>arrow_drop_down</mat-icon>
+            <span>19.2.11</span>
+          </div>
+          <div class="d-flex align-items-center gap-2 ps-2">
+            <mat-icon>brush</mat-icon>
+            <span>Theme</span>
+          </div>
+          <div class="d-flex align-items-center gap-2 ps-2">
+            <mat-icon>toggle_on</mat-icon>
+            <span>Toggle</span>
+          </div>
+          <a mat-button class="d-flex align-items-center gap-2 ps-2">
+            <mat-icon>github</mat-icon> GitHub
+          </a>
+        </div>
+      </div>
+</mat-toolbar>

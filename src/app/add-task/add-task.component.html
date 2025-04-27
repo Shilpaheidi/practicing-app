@@ -1,0 +1,98 @@
+<div class="container mt-4">
+  <div class="card shadow-sm">
+    <div class="card-body">
+      <h4 class="card-title mb-4">Add Task</h4>
+
+      <form>
+        <div class="row g-3 align-items-end">
+          <div class="col-md-2">
+            <label class="form-label"
+              >Select project <span class="text-danger">*</span></label
+            >
+            <select class="form-select" required>
+              <option value="">Select project</option>
+            </select>
+          </div>
+
+          <div class="col-md-2">
+            <label class="form-label"
+              >Select Task Group <span class="text-danger">*</span></label
+            >
+            <select class="form-select" required>
+              <option value="">Select task group</option>
+            </select>
+          </div>
+
+          <!-- <div class="col-md-1 col-lg-1  d-grid">
+      <button class="btn btn-primary" type="button">Add Row</button>
+    </div> -->
+
+          <div class="d-grid" style="width: 120px">
+            <button class="btn btn-primary w-100" type="button">Add Row</button>
+          </div>
+          <div class="col-md-6 d-flex justify-content-end">
+            <div class="d-grid">
+              <button class="btn btn-primary" type="button">Import</button>
+            </div>
+          </div>
+        </div>
+
+        <hr class="my-4" />
+
+        <!-- Task Row -->
+        <div class="row g-3 align-items-center">
+          <div class="col-md-2">
+            <label class="form-label"
+              >Task Name <span class="text-danger">*</span></label
+            >
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Enter task"
+              required
+            />
+          </div>
+
+          <div class="col-md-4">
+            <label class="form-label"
+              >Task Description <span class="text-danger">*</span></label
+            >
+            <textarea
+              class="form-control"
+              rows="1"
+              placeholder="Enter description"
+              required
+            ></textarea>
+          </div>
+
+          <div class="col-md-2">
+            <label class="form-label"
+              >Start Date <span class="text-danger">*</span></label
+            >
+            <input type="date" class="form-control" required />
+          </div>
+
+          <div class="col-md-2">
+            <label class="form-label"
+              >End Date <span class="text-danger">*</span></label
+            >
+            <input type="date" class="form-control" required />
+          </div>
+
+          <div class="col-md-2 text-center">
+            <label class="form-label d-block">Action</label>
+            <!-- Placeholder for delete/edit icons -->
+            <i class="bi bi-trash" style="cursor: pointer"></i>
+          </div>
+        </div>
+
+        <div class="d-flex justify-content-end gap-2 mt-4">
+          <button type="submit" class="btn btn-secondary" disabled>
+            Submit
+          </button>
+          <button type="reset" class="btn btn-outline-dark">Clear</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
