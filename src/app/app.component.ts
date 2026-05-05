@@ -1,7 +1,9 @@
 import { Component, ComponentRef, ViewChild, ViewContainerRef } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { ModalComponent } from './modal/modal.component';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { debounceTime, forkJoin, interval, switchMap, take } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-root',
@@ -9,6 +11,50 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+
+  // ngOnInit(): void {
+  //   const abs = interval(1000).pipe(take(5));
+  //   const sub = abs.subscribe(val => console.log(val));
+  // }
+
+
+
+
+
+  // pdfUrls = [
+  //   'https://www.ets.org/Media/Tests/TOEFL/pdf/Sample_Letter.pdf', // Formal Letter
+  //   'https://un.org/sites/un2.un.org/files/sample_resignation_letter.pdf',
+  //   'https://www.writeexpress.com/samples/letter-of-recommendation-sample.pdf',
+  //   'https://cdn.adecco.com/media/sample-cover-letter.pdf',
+  //   'https://www.thebalancecareers.com/thmb/sample-resignation-letter.pdf',
+  //   'https://www.indeed.com/career-advice/finding-a-job/sample-resignation-letter.pdf',
+  //   'https://static1.squarespace.com/static/cover-letter-sample.pdf',
+  //   'https://jobstars.com/wp-content/uploads/sample-resignation-letter.pdf',
+  //   'https://cdn3.hubspot.net/hubfs/sample-formal-letter.pdf',
+  //   'https://templates.office.com/en-us/resignation-letter-tm16391853'
+  // ];
+
+  // pdfUrls = [
+  //   'https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf',
+  //   'https://file-examples-com.github.io/uploads/2017/10/file-sample_150kB.pdf',
+  //   'https://unec.edu.az/application/uploads/2014/12/pdf-sample.pdf',
+  //   'https://www.africau.edu/images/default/sample.pdf',
+  //   'https://www.orimi.com/pdf-test.pdf',
+  //   'https://www.hq.nasa.gov/alsj/a17/A17_FlightPlan.pdf',
+  //   'https://www.ets.org/Media/Tests/TOEFL/pdf/Sample_Letter.pdf',
+  //   'https://www.clickdimensions.com/links/TestPDFfile.pdf',
+  //   'https://partners.adobe.com/public/developer/en/xml/AdobeXMLFormsSamples.pdf',
+  //   'https://research.nhm.org/pdfs/10873/10873.pdf'
+  // ];
+
+  pdfUrls = [
+    'https://www.orimi.com/pdf-test.pdf',
+    'https://unec.edu.az/application/uploads/2014/12/pdf-sample.pdf',
+    'https://file-examples-com.github.io/uploads/2017/10/file-sample_150kB.pdf',
+    'https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf'
+  ];
+
+
 
   displayedColumns: string[] = ['id', 'name', 'age', 'email'];
   data = [
@@ -166,17 +212,83 @@ export class AppComponent {
 
 
 
-  createModal(){
+  createModal() {
     this.container.clear();
-    this.modalRef =  this.container.createComponent(ModalComponent);
+    this.modalRef = this.container.createComponent(ModalComponent);
 
     this.modalRef.instance.title = 'Dynamic Modal';
     this.modalRef.instance.message = 'This is a dynamically created Modal!';
 
   }
 
+  searchControl = new FormControl();
+  constructor(private http: HttpClient) { }
+  ngOnInit() {
+    this.callApis()
+    this. getApis()
+  }
+
+
+
+  callApis() {
+    // const api1$ = this.http.get('https://jsonplaceholder.typicode.com/users');
+    // const api2$ = this.http.get('https://jsonplaceholder.typicode.com/posts');
+
+    // forkJoin([api1$, api2$]).pipe(
+    //   switchMap(([users, posts]) => {
+    //     console.log('Users:', users);
+    //     console.log('Posts:', posts);
+
+    //     return this.http.get('https://jsonplaceholder.typicode.com/comments');
+    //   })
+    // ).subscribe(comments => {
+    //   console.log('Comments (API3):', comments);
+    // });
+
+    const api1$ = this.http.get('https://jsonplaceholder.typicode.com/users');
+    const api2$ = this.http.get('https://jsonplaceholder.typicode.com/posts');
+
+    forkJoin([api1$, api2$]).pipe(switchMap((res1, res2) => {
+      console.log('api1$,api2$ ', res1, res2);
+      return this.http.get('https://jsonplaceholder.typicode.com/comments');
+    })
+    ).subscribe(res3 => {
+      console.log(res3);
+    })
+  }
+
+
+ getApis() {
+
+  // API1 & API2
+  const userApi$ = this.http.get('https://jsonplaceholder.typicode.com/users');
+  const orderApi$ = this.http.get('https://jsonplaceholder.typicode.com/posts');
+
+  forkJoin([userApi$, orderApi$])
+    .pipe(
+      switchMap((res) => {
+
+        const userRes = res[0];
+        const orderRes = res[1];
+
+        console.log('User:', userRes);
+        console.log('Order:', orderRes);
+
+        // API3 (POST)
+        return this.http.post('https://jsonplaceholder.typicode.com/posts', {
+          users: userRes,
+          orders: orderRes
+        });
+
+      })
+    )
+    .subscribe((finalRes) => {
+      console.log('Final Response:', finalRes);
+    });
+
 }
 
+}
 // function firstNonRepeatingCharacter(str: any) {
 //   const charCount: any = {};
 //   let singleCharCount: any = [];
@@ -449,6 +561,7 @@ export class AppComponent {
 // // Test the function
 // console.log(removeDuplicates([1, 2, 2, 3, 4, 4, 5]));             // Output: [1, 2, 3, 4, 5]
 // console.log(removeDuplicates(["apple", "banana", "apple", "orange"])); // Output: ["apple", "banana", "orange"]
+
 
 
 

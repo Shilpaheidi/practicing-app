@@ -1,0 +1,31 @@
+<div class="container py-4">
+    <h3 class="mb-3">Interactive Dashboard</h3>
+  
+    <div class="mb-3">
+      <span *ngFor="let widget of availableWidgets">
+        <button class="btn btn-sm btn-outline-primary me-2" (click)="addWidget(widget)">
+          Add {{ widget }}
+        </button>
+      </span>
+    </div>
+  
+    <div class="row">
+    <div cdkDropList class="d-flex flex-wrap gap-3" (cdkDropListDropped)="drop($event)">
+      <div *ngFor="let widget of widgets" cdkDrag class="card p-3" style="width: 18rem;">
+        <div class="d-flex justify-content-between align-items-center">
+        <strong class="text-capitalize">{{ widget }}</strong>
+        <button class="btn-close" (click)="removeWidget(widget)"></button>
+        </div>
+        <div class="mt-2">
+        <app-weather *ngIf="widget === 'weather'"></app-weather>
+        <app-todo-dash *ngIf="widget === 'todo'"></app-todo-dash>
+        <app-calendar *ngIf="widget === 'calendar'"></app-calendar>
+        <app-chart *ngIf="widget === 'chart'"></app-chart>
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
+  
+  
+  

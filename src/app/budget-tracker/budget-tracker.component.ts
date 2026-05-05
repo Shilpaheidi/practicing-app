@@ -6,9 +6,9 @@ import { Component } from '@angular/core';
   templateUrl: './budget-tracker.component.html',
   styleUrls: ['./budget-tracker.component.scss'],
 })
+
 export class BudgetTrackerComponent {
-  transactions: { description: string; amount: number | null; type: string }[] =
-    [];
+  transactions: { description: string; amount: number | null; type: string }[] = [];
   newTransaction = { description: '', amount: null, type: '' };
   totalIncome = 0;
   totalExpense = 0;
@@ -17,7 +17,7 @@ export class BudgetTrackerComponent {
   addTransaction() {
     if (
       this.newTransaction.description &&
-      this.newTransaction.amount &&
+      this.newTransaction.amount !== null &&
       this.newTransaction.type
     ) {
       this.transactions.push({ ...this.newTransaction });
@@ -35,12 +35,14 @@ export class BudgetTrackerComponent {
 
   deleteTransaction(index: number) {
     const transaction = this.transactions[index];
+
     if (transaction.type === 'income') {
       this.totalIncome -= transaction.amount ?? 0;
+    } else if (transaction.type === 'expense') {
+      this.totalExpense -= transaction.amount ?? 0;
     }
 
     this.balance = this.totalIncome - this.totalExpense;
-
     this.transactions.splice(index, 1);
   }
 }

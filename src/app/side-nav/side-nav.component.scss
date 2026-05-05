@@ -1,116 +1,302 @@
+.nav-shell {
+  min-height: 100vh;
+  height: 100vh;
+  background: #0b112b;
+  overflow: hidden;
+}
 
+.mat-sidenav-container {
+  height: 100%;
+}
 
-.sidenav-container {
-    height: 100vh;
-  }
-  
-  .sidenav {
-    width: 250px;
-    background: #1e1e2f;
-    color: white;
-  
-    .sidebar-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 16px;
-    }
-  
-    mat-list-item {
-      color: white !important;
-      &:hover {
-        background: rgba(255, 255, 255, 0.1);
-      }
-    }
-  
-    mat-icon {
-      margin-right: 8px;
-    }
-  }
-  
-  mat-toolbar {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-  
-  .content {
-    padding: 16px;
-  }
-  
+.nav-sidenav {
+  width: 240px;
+  min-height: 100vh;
+  background: #07112f;
+  color: #f8fbff;
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+  overflow-y: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
 
-  /* Change anchor text color to white */
-  mat-nav-list a {
-    color: white !important;
-    text-decoration: none;
-    font-weight: 500;
-    display: flex;
-    align-items: center;
-    gap: 10px; /* Adds space between icon and text */
-  }
-  
-  /* Make Material icons white */
-  mat-icon {
-    color: white !important;
-  }
-  
-  /* Optional: Add hover effect */
-  mat-nav-list a:hover {
-    color: #f1c40f !important; /* Change color on hover */
-  }
-  
-  .mat-list-item {
-    color: white !important; 
-  }
+.nav-sidenav::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
+}
 
-  a{
-    color: white;
-  }
+.brand-header {
+  padding: 1rem 1rem 0.45rem;
+}
 
-  /* Ensure the anchor tag aligns items properly */
-a.mat-list-item {
-    display: flex;
-    align-items: center; /* Align items vertically */
-    gap: 10px; /* Add spacing between icon and text */
-    color: white !important; /* Force white text */
-    text-decoration: none;
-    font-weight: 500;
-  }
-  
-  /* Ensure icons and text are white */
-  a.mat-list-item mat-icon {
-    color: white !important;
-    font-size: 24px; /* Adjust icon size */
-    vertical-align: middle; /* Ensure middle alignment */
-  }
-  
-  /* Ensure span text is also white */
-  a.mat-list-item .text-neutral-100 {
-    color: white !important;
-    font-size: 16px; /* Adjust font size */
-  }
-  
-  /* Optional: Hover effect */
-  a.mat-list-item:hover {
-    color: #f1c40f !important; 
-  }  
+.brand-title {
+  display: inline-block;
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  color: #ffffff;
+}
 
-  /* Change text color to white for all links inside mat-nav-list */
+.profile-card {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  margin: 1rem 0.9rem 1.1rem;
+  padding: 0.7rem;
+  border-radius: 0.9rem;
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.profile-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #4e7bff 0%, #9158ff 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1rem;
+}
+
+.profile-avatar mat-icon {
+  font-size: 20px;
+}
+
+.profile-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.06rem;
+}
+
+.profile-name {
+  display: flex;
+  align-items: center;
+  gap: 0.1rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+.profile-expand {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.profile-role {
+  font-size: 0.72rem;
+  color: #c8bf8f;
+  letter-spacing: 0.02em;
+}
+
+.section-label {
+  margin: 0 1rem 0.65rem;
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.55);
+}
+
+mat-nav-list {
+  padding: 0;
+}
+
 mat-nav-list a {
-  color: white !important;
+  color: #ffffff !important;
+  min-height: 42px;
+  padding: 0.55rem 0.9rem;
+  margin: 0.12rem 0;
+  border-radius: 0.8rem;
+  transition: background 200ms ease, transform 200ms ease;
+  text-decoration: none;
 }
 
-/* Ensure text inside mat-list-item is white */
-a[mat-list-item] {
-  color: white !important;
+mat-nav-list a .nav-item-content {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  width: 100%;
 }
 
-/* Ensure text inside a span is also white */
-a[mat-list-item] span {
-  color: white !important;
+mat-nav-list a:hover,
+mat-nav-list a.selected {
+  background: rgba(255, 255, 255, 0.08);
 }
 
-/* Ensure icons inside links are white */
-a[mat-list-item] mat-icon {
-  color: white !important;
+.nav-icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 0.75rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.nav-icon mat-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  font-size: 14px;
+  color: white;
+  line-height: 1;
+}
+
+.nav-text {
+  font-size: 0.88rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  line-height: 1;
+  color: #b0bccf;
+}
+
+.top-toolbar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  min-height: 52px;
+  padding: 0 0.9rem;
+  background: #0f1b40;
+  color: #ffffff;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.14);
+}
+
+.content-shell {
+  min-height: 100vh;
+  background: #0f172a;
+  overflow: hidden;
+}
+
+.page-content {
+  padding: 1rem;
+  max-width: 1040px;
+  margin: 0 auto;
+  max-height: calc(100vh - 52px - 2rem);
+  overflow-y: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.page-content::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
+}
+
+.hero-panel {
+  background: #111d3b;
+  border-radius: 1rem;
+  padding: 1.2rem;
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.14);
+}
+
+.hero-panel h1 {
+  margin: 0;
+  color: #ffffff;
+  font-size: clamp(1.6rem, 2.2vw, 2.2rem);
+  line-height: 1.05;
+}
+
+.hero-panel p {
+  margin-top: 0.9rem;
+  color: #b8c3dc;
+  font-size: 0.95rem;
+  max-width: 42rem;
+}
+
+.primary-blue {
+  background: #3a65ff;
+}
+
+.primary-orange {
+  background: #ff6f3a;
+}
+
+.primary-red {
+  background: #ea3a5a;
+}
+
+.primary-violet {
+  background: #7d5aff;
+}
+
+.primary-green {
+  background: #35c16f;
+}
+
+.primary-yellow {
+  background: #f0b95b;
+}
+
+.top-toolbar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  min-height: 64px;
+  padding: 0 1.25rem;
+  background: #0f1b40;
+  color: #ffffff;
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.16);
+}
+
+.toolbar-title {
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+.content-shell {
+  min-height: 100vh;
+  background: #0f172a;
+}
+
+.page-content {
+  padding: 2rem;
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+.hero-panel {
+  background: #111d3b;
+  border-radius: 1.25rem;
+  padding: 2rem;
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.15);
+}
+
+.hero-panel h1 {
+  margin: 0;
+  color: #ffffff;
+  font-size: clamp(1.8rem, 2.5vw, 2.6rem);
+  line-height: 1.05;
+}
+
+.hero-panel p {
+  margin-top: 1rem;
+  color: #b8c3dc;
+  font-size: 1rem;
+  max-width: 44rem;
+}
+
+@media (max-width: 768px) {
+  .nav-sidenav {
+    width: 100%;
+  }
+
+  .brand-header,
+  .profile-card,
+  .section-label,
+  mat-nav-list a {
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+
+  .profile-card {
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
 }

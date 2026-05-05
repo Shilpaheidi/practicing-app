@@ -1,0 +1,27 @@
+<div class="templates-component">
+  <div class="row">
+    <div class="col-md-6">
+      <!-- <app-common-stepper
+        style="margin-top: 10px"
+        [steps]="steps"
+        [letterContent]="letterContent"
+        [editorConfig]="editorConfig"
+        (contentChange)="onContentChange($event)"
+        (keyup)="updateTemplate()"
+        (finishClicked)="saveTemplate()"
+         (selectionChanged)="receiveEmployee($event)"
+      ></app-common-stepper> -->
+    </div>
+    <div class="col-md-6">
+      <div id="pdfContent" [innerHTML]="generatedTemplate"></div>
+      <div class="text-center mb-2 mt-2" *ngIf="generatedTemplate">
+        <button
+          class="btn btn-primary px-4 py-2 rounded shadow-sm"
+          (click)="printPdf()"
+        >
+          <i class="bi bi-download me-2"></i> Download PDF
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

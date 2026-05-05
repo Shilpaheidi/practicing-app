@@ -4,6 +4,8 @@ import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { ParentComponent } from './parent/parent.component';
+import { ChildDataComponent } from './child-data/child-data.component';
+import { ParentDataComponent } from './parent-data/parent-data.component';
 
 // const routes: Routes = [{ path: '', component: HomeComponent },
 //   { path: 'home', component: HomeComponent }, {
@@ -36,6 +38,11 @@ const routes: Routes = [
   //   ]
   // },
   // { path: '**', redirectTo: 'parent' } // Redirect any unknown routes
+
+  { path: '', component: HomeComponent },
+  { path: 'data-child', component: ChildDataComponent }, {
+    path: 'about', component: ParentDataComponent
+  }
 ];
 
 

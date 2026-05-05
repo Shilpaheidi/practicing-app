@@ -112,15 +112,19 @@ export class SnakeGameComponent {
       
       switch (event.key) {
         case 'ArrowUp':
+             console.log('keyCheck', event.key);
           if (this.direction !== 'DOWN') this.direction = 'UP';
           break;
         case 'ArrowDown':
+             console.log('keyCheck', event.key);
           if (this.direction !== 'UP') this.direction = 'DOWN';
           break;
         case 'ArrowLeft':
+             console.log('keyCheck', event.key);
           if (this.direction !== 'RIGHT') this.direction = 'LEFT';
           break;
         case 'ArrowRight':
+             console.log('keyCheck', event.key);
           if (this.direction !== 'LEFT') this.direction = 'RIGHT';
           break;
       }

@@ -1,0 +1,47 @@
+// .table-responsive {
+//   width: 100%;
+//   overflow-x: auto;
+// }
+
+// .fixed-table {
+//   border-collapse: collapse;
+//   width: max-content; /* makes table expand as per content */
+//   table-layout: fixed; /* fixes width of columns */
+// }
+
+// .fixed-table th,
+// .fixed-table td {
+//   border: 1px solid #ccc;
+//   padding: 8px 12px;
+//   white-space: nowrap; /* avoid wrapping */
+//   text-align: left;
+// }
+
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.fixed-table {
+  border-collapse: collapse;
+  width: max-content;
+  table-layout: fixed;
+}
+
+.fixed-table th,
+.fixed-table td {
+  border: 1px solid #ccc;
+  padding: 8px 12px;
+  white-space: nowrap;
+  text-align: left;
+}
+
+/* Hide scrollbar but keep scroll functionality */
+.no-scrollbar {
+  -ms-overflow-style: none; /* IE & Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none; /* Chrome, Safari */
+}

@@ -88,6 +88,33 @@ import { ProjectsStatusOverviewComponent } from './projects-status-overview/proj
 import { RecentActivityTimtlineComponent } from './recent-activity-timtline/recent-activity-timtline.component';
 import { UserProfileCardComponent } from './user-profile-card/user-profile-card.component';
 import { DashboardWithCardsComponent } from './dashboard-with-cards/dashboard-with-cards.component';
+import { PriceplanComponent } from './priceplan/priceplan.component';
+import { SimpleTestimonialSectionComponent } from './simple-testimonial-section/simple-testimonial-section.component';
+import { ServicesSectionComponent } from './services-section/services-section.component';
+import { InteractiveDashboardComponent } from './interactive-dashboard/interactive-dashboard.component';
+import { WeatherComponent } from './weather/weather.component';
+import { TodoDashComponent } from './todo-dash/todo-dash.component';
+import { CalendarComponent } from './calendar/calendar.component';
+import { ChartComponent } from './chart/chart.component';
+import { DragDropModule } from '@angular/cdk/drag-drop';
+import { DataTableComponent } from './data-table/data-table.component';
+import { SnakeBoardGameComponent } from './snake-board-game/snake-board-game.component';
+import { PricingComponent } from './pricing/pricing.component';
+import { ComplicatedDesignComponent } from './complicated-design/complicated-design.component';
+import { ResponsiveCardsComponent } from './responsive-cards/responsive-cards.component';
+import { ResponsiveNavigationBarComponent } from './responsive-navigation-bar/responsive-navigation-bar.component';
+import { ChildDataComponent } from './child-data/child-data.component';
+import { ParentDataComponent } from './parent-data/parent-data.component';
+import { RelievingLetterComponent } from './relieving-letter/relieving-letter.component';
+import { DatePipe } from '@angular/common';
+import { OfferLetterComponent } from './offer-letter/offer-letter.component';
+import { RevisionLetterComponent } from './revision-letter/revision-letter.component';
+// import { NgChartsModule } from 'ng2-charts';
+// import { ChartsModule } from 'ng2-charts';
+// import { PdfViewerModule } from 'ng2-pdf-viewer';
+import { PdfViewerComponent } from './pdf-viewer/pdf-viewer.component';
+import { NgxExtendedPdfViewerModule } from 'ngx-extended-pdf-viewer';
+import { AngularInterviewComponent } from './angular-interview/angular-interview.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -156,7 +183,29 @@ import { DashboardWithCardsComponent } from './dashboard-with-cards/dashboard-wi
     ProjectsStatusOverviewComponent,
     RecentActivityTimtlineComponent,
     UserProfileCardComponent,
-    DashboardWithCardsComponent
+    DashboardWithCardsComponent,
+    PriceplanComponent,
+    SimpleTestimonialSectionComponent,
+    ServicesSectionComponent,
+    InteractiveDashboardComponent,
+    WeatherComponent,
+    TodoDashComponent,
+    CalendarComponent,
+    ChartComponent,
+    DataTableComponent,
+    SnakeBoardGameComponent,
+    PricingComponent,
+    ComplicatedDesignComponent,
+    ResponsiveCardsComponent,
+    ResponsiveNavigationBarComponent,
+    ChildDataComponent,
+    ParentDataComponent,
+    RelievingLetterComponent,
+    OfferLetterComponent,
+    RevisionLetterComponent,
+    PdfViewerComponent,
+    AngularInterviewComponent,
+    
     // FilterPipe
   ],
   imports: [
@@ -179,11 +228,15 @@ import { DashboardWithCardsComponent } from './dashboard-with-cards/dashboard-wi
     MatListModule,
     MatCheckboxModule,
     MatProgressBarModule,
-    MatCardModule
+    MatCardModule,
+    // NgChartsModule,
+    DragDropModule,
+    // PdfViewerModule
+NgxExtendedPdfViewerModule,HttpClientModule
 
 
   ],
-  providers: [],
+  providers: [DatePipe ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

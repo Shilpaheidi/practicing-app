@@ -1,26 +1,194 @@
-ul {
-    list-style: none;
-    padding: 0;
-  }
-  
-  li {
-    margin-bottom: 10px;
-  }
-  
-  .completed {
-    text-decoration: line-through;
-    color: gray;
-  }
-  
+// ul {
+//     list-style: none;
+//     padding: 0;
+//   }
 
-  nav a {
-    margin-right: 10px;
+//   li {
+//     margin-bottom: 10px;
+//   }
+
+//   .completed {
+//     text-decoration: line-through;
+//     color: gray;
+//   }
+
+//   nav a {
+//     margin-right: 10px;
+//     text-decoration: none;
+//     color: black;
+//   }
+
+//   nav a.active {
+//     font-weight: bold;
+//     color: blue;
+//   }
+
+.custom-card {
+  border-radius: 12px;
+  border: 1px solid #e5e5e5;
+}
+
+.custom-card .badge {
+  border-radius: 50px;
+  font-size: 0.75rem;
+  padding: 5px 10px;
+}
+
+.custom-card p {
+  margin-bottom: 4px;
+}
+
+.bg-success-subtle {
+  background-color: #e6f4ea;
+  font-weight: 500;
+}
+
+.card-footer {
+  background: #fafafa;
+  border-top: 1px solid #f0f0f0;
+}
+
+.sidebar {
+  height: calc(100vh - 50px); /* Full height sidebar */
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+}
+
+.main-bar {
+  height: calc(100vh - 50px); /* Full height sidebar */
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+}
+
+.list-group-item {
+  border: none;
+  font-size: 15px;
+}
+
+.list-group-item.active {
+  background-color: #164e36; /* Dark green */
+  color: #fff;
+  border-radius: 8px;
+}
+
+.upload-box {
+  border: 2px dashed #ccc;
+  background: #fafafa;
+  transition: 0.3s;
+}
+.upload-box:hover {
+  background: #f5fdf7;
+  border-color: #28a745;
+}
+
+
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  border-bottom: 1px dotted black;
+  color: black; /* ensures text is visible */
+}
+
+.tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+
+  position: absolute;
+  bottom: 125%;   /* positions tooltip above the text */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;  /* arrow at bottom of tooltip */
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 5px;
+  border-style: solid;
+  border-color: black transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+
+.tooltip {
+    --bs-tooltip-zindex: 1080;
+    --bs-tooltip-max-width: 200px;
+    --bs-tooltip-padding-x: 0.5rem;
+    --bs-tooltip-padding-y: 0.25rem;
+    --bs-tooltip-margin: ;
+    --bs-tooltip-font-size: 0.875rem;
+    --bs-tooltip-color: var(--bs-body-bg);
+    --bs-tooltip-bg: var(--bs-emphasis-color);
+    --bs-tooltip-border-radius: var(--bs-border-radius);
+    --bs-tooltip-opacity: 0.9;
+    --bs-tooltip-arrow-width: 0.8rem;
+    --bs-tooltip-arrow-height: 0.4rem;
+    z-index: var(--bs-tooltip-zindex);
+    display: block;
+    margin: var(--bs-tooltip-margin);
+    font-family: var(--bs-font-sans-serif);
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.5;
+    text-align: left;
+    text-align: start;
     text-decoration: none;
-    color: black;
-  }
-  
-  nav a.active {
-    font-weight: bold;
-    color: blue;
-  }
-  
+    text-shadow: none;
+    text-transform: none;
+    letter-spacing: normal;
+    word-break: normal;
+    white-space: normal;
+    word-spacing: normal;
+    line-break: auto;
+    font-size: var(--bs-tooltip-font-size);
+    word-wrap: break-word;
+    opacity: 1;
+}
+
+
+.dashboard-wrapper {
+  margin-top: 56px;
+}
+
+.sidebar {
+  min-height: 100vh;
+  background: #f8f9fa;
+  padding: 1rem;
+}
+
+.sidebar .nav-item {
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+.sidebar .nav-item:hover {
+  background: #e9ecef;
+}
+
+.content-area {
+  padding: 1.5rem;
+}
+
+.stat-card {
+  padding: 1rem;
+  border-radius: 12px;
+}
